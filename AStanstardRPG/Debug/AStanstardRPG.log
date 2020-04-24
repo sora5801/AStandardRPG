@@ -1,0 +1,16 @@
+﻿  AStanstardRPG.cpp
+C:\Users\sora5\source\repos\AStanstardRPG\AStanstardRPG\Battle.h(14,9): warning C4101: 'c': unreferenced local variable
+  Equipment.cpp
+  Hero.cpp
+  Monster.cpp
+  Quest.cpp
+  Weapon.cpp
+  mage.cpp
+C:\Users\sora5\source\repos\AStanstardRPG\AStanstardRPG\mage.cpp(23,46): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\sora5\source\repos\AStanstardRPG\AStanstardRPG\mage.cpp(36,45): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  priest.cpp
+  ranger.cpp
+  warrior.cpp
+C:\Users\sora5\source\repos\AStanstardRPG\AStanstardRPG\warrior.cpp(17,65): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+  AStanstardRPG.vcxproj -> C:\Users\sora5\source\repos\AStanstardRPG\Debug\AStanstardRPG.exe
