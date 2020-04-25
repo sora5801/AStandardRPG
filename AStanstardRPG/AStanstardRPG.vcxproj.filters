@@ -125,5 +125,11 @@
     <ClInclude Include="WeaponStatBonus.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ArmorRequirements.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ArmorStatBonus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -4,13 +4,14 @@
 #include <ctime>
 #include <random>
 class Monster {
-	//Weapon weapon_loot;
-	//Armor armor_loot;
+	Weapon weapon_loot;
+	Armor armor_loot;
 	int hitpoints;
 	int mana;
 	int experience;
 	int damage;
 	int target;
+	int initiative;
 	//Stats. Certain items needs a certain amount of stats in order to equip it.
 	int intelligence; //increases magic damage, mana.
 	int strength; //increases physical damage
@@ -20,8 +21,13 @@ class Monster {
 public:
 	Monster();
 	Monster(int,int,int,int,int,int,int);
+	Monster(Weapon, Armor, int, int, int, int, int, int, int, int);
 	~Monster(); //After monster is dead, the monster must be destroyed to free up memory;
-	void dropLoot();
+	//void dropLoot();
+	Weapon dropWeaponLoot() { return weapon_loot; }
+	Armor dropArmorLoot() { return armor_loot; }
+	void setWeaponLoot(Weapon);
+	void setArmorLoot(Armor);
 	void dropExperience();
 	void chooseTarget();
 	int getTarget();
@@ -29,6 +35,23 @@ public:
 	int getHealth();
 	int getDamage() { return damage; }
 	void setDamage(int);
+	void rollforInitiative();
+	int getInitiative() { return initiative; }
+	Monster& operator=(const Monster& M) {
+		hitpoints = M.hitpoints;
+		mana = M.mana;
+		damage = M.damage;
+		target = M.target;
+		initiative = M.initiative;
+		weapon_loot = M.weapon_loot;
+		armor_loot = M.armor_loot;
+		intelligence = M.intelligence;
+		strength = M.strength;
+		dexterity = M.dexterity;
+		wisdom = M.wisdom;
+		vitality = M.vitality;
+		return *this;
+	}
 };
 
 class Boss : public Monster {

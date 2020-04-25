@@ -161,6 +161,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Armor.h" />
+    <ClInclude Include="ArmorRequirements.h" />
+    <ClInclude Include="ArmorStatBonus.h" />
     <ClInclude Include="Battle.h" />
     <ClInclude Include="Coin.h" />
     <ClInclude Include="Dungeon.h" />

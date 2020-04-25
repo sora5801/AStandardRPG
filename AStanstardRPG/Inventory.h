@@ -6,11 +6,12 @@
 #include <vector>
 using namespace std;
 
+
 class Inventory
 {
 private:
 	//Item bag;
-	//unordered_map<Item, int> items; //doesn't seem to work
+	std::unordered_map<Potion, int, KeyHasher> items; //Wow I got it to work!
 	//items[bag.getname()] = 1;
 
 	//unordered_map<string, int> items;
@@ -24,4 +25,5 @@ public:
 	void add_item(Item i) { item_stash.push_back(i); }
 	void add_weapon(Weapon w) { weapon_stash.push_back(w); }
 	void add_Potion(Potion p) { potion_stash.push_back(p); }
+	void display_inventory();
 };

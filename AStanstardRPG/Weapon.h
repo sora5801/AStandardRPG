@@ -17,9 +17,11 @@ public:
 	enum SpecialEffect { lifesteal, manasteal, criticalstrike, poison, cold, none} ;
 	Weapon(string, int, int, SpecialEffect, Weapon_Requirements);
 	Weapon_Requirements getRequirements() { return requirements; }
+	WeaponStatBonus getStatBonus() { return statbonus; }
 	void setRequirements(int, int, int, int, int);
 	void setstatbonus(int, int, int, int, int);
 	void setdamageBonuses(int);
 	int getDamagebonus() { return damageBonus; }
+	string getName() { return name; }
 };
 

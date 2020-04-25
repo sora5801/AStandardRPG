@@ -19,20 +19,22 @@ using namespace std;
 class Hero {
 
 protected:
-	Inventory inventory;
-	Equipment equipment;
+	static Inventory inventory;
+	//Equipment equipment;
 	Weapon weaponequipped;
-	Armor armorrequipped;
+	Armor armorequipped;
 	Quest quest;
 	Coin coin;
-	string name;
+	std::string name;
 	bool alive;
 	int damage_dealt;
+	int physical_damage_taken;
+	int magical_damage_taken;
 	int hitpoints;
 	int mana;
 	int level;
 	int experience;
-	int initiative_chance; //This is the chance that the hero acts before the monster or anyone else.
+	int initiative; //This is the chance that the hero acts before the monster or anyone else.
 	int attribute_points; // points to spend on stats
 	//Stats. Certain items needs a certain amount of stats in order to equip it.
 	int intelligence; //increases magic damage, mana.
@@ -45,7 +47,7 @@ public:
 	//void takeQuest(Quest);
 	void move(char direction); //Move in land;
 	void loot(); //pick up loot from ground and place into inventory
-	void setName(string);
+	void setName(std::string);
 	virtual void levelup();
 	int getHealth();
 	void setHealth(int);
@@ -56,10 +58,21 @@ public:
 	void addItem(Item);
 	void addPotion(Potion);
 	void usePotion();
+	void addWeapon(Weapon);
+	void addArmor(Armor);
 	bool isAlive();
 	int getDamageDealt();
+	int getPhysicalDamageTaken() { return physical_damage_taken; }
+	int getMagicalDamageTaken(){return magical_damage_taken;}
+	void setPhysicalDamageTaken();
+	void setMagicalDamageTaken();
 	void equipWeapon(Weapon);
 	void equipArmor(Armor);
+	void getWeaponBonus();
+	void rollforInitiative();
+	bool canEquipArmor(Armor);
+	bool canEquipWeapon(Weapon);
+	int getInitiative() { return initiative; }
 };
 
 

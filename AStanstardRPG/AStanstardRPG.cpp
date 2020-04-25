@@ -2,6 +2,11 @@
 //
 #include <iostream>
 #include "Battle.h"
+
+Monster EveryMonster(int);
+Weapon EveryWeapon(int);
+Armor EveryArmor(int);
+
 using namespace std;
 int main()
 {
@@ -9,25 +14,44 @@ int main()
     priest pan;
     warrior wan;
     ranger ran;
-    Monster monster;
     Potion pat;
-    Weapon sword("sword", 5);
-    wan.equipWeapon(sword);
+    ran.equipArmor(EveryArmor(1));
+    wan.equipArmor(EveryArmor(0));
+    wan.equipWeapon(EveryWeapon(0));
+    ran.equipWeapon(EveryWeapon(1));
     man.addPotion(pat);
     Battle battle;
-    battle.EngageBattle(man, pan, wan, ran, monster);
-    cout << "Welcome!" << endl;
-    cout << "Choose your class" << endl;
-    cout << "This land is called Elluinus" << endl;
+    battle.EngageBattle(man, pan, wan, ran, EveryMonster(0));
+   // cout << "This land is called Elluinus" << endl;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+Monster EveryMonster(int i) {
+    vector<Monster> vectis;
+    Monster gargoyle(300, 50, 10, 10, 10, 10, 10);
+    gargoyle.setWeaponLoot(EveryWeapon(0));
+    gargoyle.setArmorLoot(EveryArmor(0));
+    vectis.push_back(gargoyle);
+    return vectis[i];
+}
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+Weapon EveryWeapon(int i) {
+    vector<Weapon> vectis;
+    Weapon sword("sword", 5);
+    sword.setstatbonus(5, 5, 5, 5, 5);
+    vectis.push_back(sword);
+    Weapon bow("bow", 5);
+    bow.setstatbonus(5, 5, 5, 5, 5);
+    vectis.push_back(bow);
+    return vectis[i];
+}
+
+Armor EveryArmor(int i) {
+    vector<Armor> vectis;
+    Armor plate("plate", 5);
+    plate.setstatbonus(4, 4, 4, 4, 4);
+    vectis.push_back(plate);
+    Armor leather("leather", 3);
+    leather.setstatbonus(4, 4, 4, 4, 4);
+    vectis.push_back(leather);
+    return vectis[i];
+}

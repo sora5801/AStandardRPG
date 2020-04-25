@@ -44,3 +44,18 @@ void Monster::setDamage(int d) {
 	std::uniform_int_distribution<> dis(2, 6);
 	damage = d * dis(gen);
 }
+
+void Monster::rollforInitiative() {
+	std::random_device rd;  //Will be used to obtain a seed for the random number engine
+	std::mt19937 gen(rd()); //Standard mersenne_twister_engine seeded with rd()
+	std::uniform_int_distribution<> dis(1, 4);
+	initiative = (dis(gen) * dexterity) / 2;
+}
+
+void Monster::setWeaponLoot(Weapon w) {
+	weapon_loot = w;
+}
+
+void Monster::setArmorLoot(Armor a) {
+	armor_loot = a;
+}
