@@ -153,6 +153,7 @@
     <ClCompile Include="Hero.cpp" />
     <ClCompile Include="mage.cpp" />
     <ClCompile Include="Monster.cpp" />
+    <ClCompile Include="NPC.cpp" />
     <ClCompile Include="priest.cpp" />
     <ClCompile Include="Quest.cpp" />
     <ClCompile Include="ranger.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="ArmorStatBonus.h" />
     <ClInclude Include="Battle.h" />
     <ClInclude Include="Coin.h" />
+    <ClInclude Include="Database.h" />
     <ClInclude Include="Dungeon.h" />
     <ClInclude Include="Equipment.h" />
     <ClInclude Include="Inventory.h" />

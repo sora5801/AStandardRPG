@@ -68,7 +68,7 @@ public:
 				}
 				if(vectis[i] == M.getInitiative()){
 					if (M.getHealth() > 0) {
-						cout << "The monster attacks!" << endl;
+						cout << "The "<< M.getName() << " attacks!" << endl;
 						M.chooseTarget();
 						if (M.getTarget() == 1) {
 							m.setPhysicalDamageTaken();
@@ -93,7 +93,7 @@ public:
 					}
 				}
 				if (M.getHealth() <= 0) {
-					cout << "The monster is dead!" << endl;
+					cout << "The " << M.getName() << " is dead!" << endl;
 					std::random_device rd;  //Will be used to obtain a seed for the random number engine
 					std::mt19937 gen(rd()); //Standard mersenne_twister_engine seeded with rd()
 					std::uniform_int_distribution<> dis(1, 6);

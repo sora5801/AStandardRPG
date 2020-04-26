@@ -1,5 +1,6 @@
 #include "Hero.h"
 Inventory Hero::inventory;
+vector<Quest> Hero::quest;
 
 Hero::Hero(){ level = 1; }
 void Hero::setHealth(int health) { hitpoints = health; }

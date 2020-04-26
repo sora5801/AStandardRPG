@@ -4,8 +4,13 @@
 #include "Hero.h"
 class NPC {
 	Quest quest;
-	string dialogue;
-	string name;
+	std::string dialogue;
+	std::string name;
 public:
-	//void assignQuest(Hero& h) { h.takeQuest(this->quest); }
+	NPC();
+	NPC(Quest, std::string);
+	std::string sayDialogue();
+	void assigndialogue(std::string d) { dialogue = d; }
+	std::string getdialogue() { return dialogue; }
+	void assignQuest(Hero& h) { h.takeQuest(this->quest); }
 };

@@ -23,7 +23,7 @@ protected:
 	//Equipment equipment;
 	Weapon weaponequipped;
 	Armor armorequipped;
-	Quest quest;
+	static vector<Quest> quest;
 	Coin coin;
 	std::string name;
 	bool alive;
@@ -44,7 +44,7 @@ protected:
 	int vitality; //increases health
 public:
 	Hero();
-	//void takeQuest(Quest);
+	void takeQuest(Quest q) { quest.push_back(q); }
 	void move(char direction); //Move in land;
 	void loot(); //pick up loot from ground and place into inventory
 	void setName(std::string);

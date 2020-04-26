@@ -22,4 +22,11 @@ public:
 	void setstatbonus(int, int, int, int, int);
 	void setDefenseBonuses(int);
 	int getDefensebonus() { return defensebonus; }
+
+	bool operator==(const Armor& p) const { //Needed to make Potion a key option for unordered_map
+		if (p.name == this->name && p.statbonus == this->statbonus && p.defensebonus == this->defensebonus &&
+			p.requirements == this->requirements)
+			return true;
+		return false;
+	}
 };

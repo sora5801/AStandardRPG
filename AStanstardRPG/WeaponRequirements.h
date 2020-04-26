@@ -29,4 +29,11 @@ public:
 		vitality = WR.vitality;
 		return *this;
 	}
+
+	bool operator==(const Weapon_Requirements& p) const { //Needed to make Potion a key option for unordered_map
+		if (p.intelligence == this->intelligence && p.strength == this->dexterity && p.wisdom == this->wisdom &&
+			p.vitality == this->vitality)
+			return true;
+		return false;
+	}
 };

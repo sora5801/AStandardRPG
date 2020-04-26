@@ -18,6 +18,33 @@ Monster::Monster(int health, int mana, int intelligence, int strength, int dexte
 	this->vitality = vitality;
 }
 
+Monster::Monster(Weapon w, Armor a, int exp, int damage, int health, int mana, int intelligence, int strength, int dexterity, int wisdom, int vitality) {
+	weapon_loot = w;
+	armor_loot = a;
+	hitpoints = health;
+	this->mana = mana;
+	this->intelligence = intelligence;
+	this->strength = strength;
+	this->dexterity = dexterity;
+	this->wisdom = wisdom;
+	this->vitality = vitality;
+}
+
+Monster::Monster(std::string n, Weapon w, Armor a, int exp, int damage, int health, int mana, int intelligence, int strength, int dexterity, int wisdom, int vitality) {
+	name = n;
+	weapon_loot = w;
+	armor_loot = a;
+	hitpoints = health;
+	this->experience = exp;
+	this->damage = damage;
+	this->mana = mana;
+	this->intelligence = intelligence;
+	this->strength = strength;
+	this->dexterity = dexterity;
+	this->wisdom = wisdom;
+	this->vitality = vitality;
+}
+
 Monster::Monster() {
 	hitpoints = 200;
 	mana = 20;
