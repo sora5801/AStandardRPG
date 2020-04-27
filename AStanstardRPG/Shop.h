@@ -3,4 +3,5 @@
 class Shop {
 private:
 	NPC npc;
+	Item stock;
 };

@@ -8,8 +8,9 @@ class NPC {
 	std::string name;
 public:
 	NPC();
+	NPC(std::string);
 	NPC(Quest, std::string);
-	std::string sayDialogue();
+	std::string sayDialogue() { return dialogue; }
 	void assigndialogue(std::string d) { dialogue = d; }
 	std::string getdialogue() { return dialogue; }
 	void assignQuest(Hero& h) { h.takeQuest(this->quest); }

@@ -8,7 +8,11 @@ public:
 	int Healthrecover;
 	int Manarecover;
 	Potion() { Healthrecover = 5; }
-	Potion(std::string, int, int);
+	Potion(std::string n, int h, int m) {
+		name = n;
+		Healthrecover = h;
+		Manarecover = m;
+	}
 	void setManaRecover(int m) { Manarecover = m; }
 	void setHealthRecover(int h) { Healthrecover = h; }
 	int getManaRecover() { return Manarecover; }

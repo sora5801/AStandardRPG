@@ -10,7 +10,13 @@ class Quest {
 	Potion potion_reward;
 public:
 	Quest();
-	Quest(std::string, bool, Weapon, Armor, Potion);
+	Quest(std::string n , bool c, Weapon w, Armor a, Potion p) {
+		name = n;
+		completed = c;
+		weapon_reward = w;
+		armor_reward = a;
+		potion_reward = p;
+	}
 	Weapon giveWeaponReward() { return weapon_reward; }
 	Armor giveArmorReward() { return armor_reward; }
 	Potion givePotionReward() { return potion_reward; }
