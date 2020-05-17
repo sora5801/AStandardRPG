@@ -4,10 +4,10 @@ using namespace std;
 
 class Item {
 private:
-	string name;
+	std::string name;
 	int required_stats;
 public:
 	Item() {}
 	bool canBeEquipped();
-	string getName() { return name; }
+	std::string getName() { return name; }
 };

@@ -130,36 +130,36 @@ public:
 						if (c == 'f') {
 							cout << "The mage casted fireball!" << endl; // exclamation point to make things seem more exciting
 							p.man.castFireBall(M);
-							cout << "It dealt " << p.man.getDamageDealt() << " damage to the monster!" << endl;
+							cout << "He dealt " << p.man.getDamageDealt() << " damage to the monster!" << endl;
 						}
 						else if (c == 'l') {
 							cout << "The mage casted lightning!" << endl;
 							p.man.castLightning(M);
-							cout << "It dealt " << p.man.getDamageDealt() << " damage to the monster!" << endl;
+							cout << "He dealt " << p.man.getDamageDealt() << " damage to the monster!" << endl;
 						}
 						else
-							cout << "Invalid choice. You have lose your turn." << endl;
+							cout << "Invalid choice. You have lost your turn." << endl;
 					}
 				}
 				if (vectis[i] == p.wan.getInitiative()) {
 					if (p.wan.isAlive()) {
 						cout << "The warrior swings his weapon!" << endl;
 						p.wan.swingWeapon(M);
-						cout << "It dealt " << p.wan.getDamageDealt() << " damage to the monster!" << endl;
+						cout << "He dealt " << p.wan.getDamageDealt() << " damage to the monster!" << endl;
 					}
 				}
 				if (vectis[i] == p.ran.getInitiative()) {
 					if (p.ran.isAlive()) {
 						cout << "The ranger shoots her bow!" << endl;
 						p.ran.shootBow(M);
-						cout << "It dealt " << p.ran.getDamageDealt() << " damage to the monster!" << endl;
+						cout << "She dealt " << p.ran.getDamageDealt() << " damage to the monster!" << endl;
 					}
 				}
 				if (vectis[i] == p.pan.getInitiative()) {
 					if (p.pan.isAlive()) {
 						cout << "The priest casts holy light!" << endl;
 						p.pan.castHolyLight(M);
-						cout << "It dealt " << p.pan.getDamageDealt() << " damage to the monster!" << endl;
+						cout << "She dealt " << p.pan.getDamageDealt() << " damage to the monster!" << endl;
 					}
 				}
 				if (vectis[i] == M.getInitiative()) {

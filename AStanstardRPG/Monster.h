@@ -4,6 +4,7 @@
 #include "Potion.h"
 #include <ctime>
 #include <random>
+#include <iostream>
 class Monster {
 	std::string name;
 	Weapon weapon_loot;
@@ -51,6 +52,7 @@ public:
 	void rollforInitiative();
 	int getInitiative() { return initiative; }
 	Monster& operator=(const Monster& M) {
+		name = M.name;
 		hitpoints = M.hitpoints;
 		mana = M.mana;
 		damage = M.damage;
@@ -65,7 +67,11 @@ public:
 		vitality = M.vitality;
 		return *this;
 	}
+	friend std::ostream& operator<<(std::ostream& output, const Monster& M);
 };
+
+
+
 
 class Boss : public Monster {
 	enum SpecialAbilities{regeneration, death_word, chaos, freeze, hypnosis, none};

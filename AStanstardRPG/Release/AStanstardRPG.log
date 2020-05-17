@@ -1,0 +1,23 @@
+﻿  AStanstardRPG.cpp
+C:\Users\sora5\source\repos\AStanstardRPG\AStanstardRPG\Battle.h(122,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\sora5\source\repos\AStanstardRPG\AStanstardRPG\Database.h(19,26): warning C4018: '<': signed/unsigned mismatch
+  Database.cpp
+C:\Users\sora5\source\repos\AStanstardRPG\AStanstardRPG\Database.h(19,26): warning C4018: '<': signed/unsigned mismatch
+  Hero.cpp
+  NPC.cpp
+  Tile.cpp
+  mage.cpp
+C:\Users\sora5\source\repos\AStanstardRPG\AStanstardRPG\mage.cpp(23,46): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\sora5\source\repos\AStanstardRPG\AStanstardRPG\mage.cpp(36,45): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  priest.cpp
+C:\Users\sora5\source\repos\AStanstardRPG\AStanstardRPG\priest.cpp(22,42): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  ranger.cpp
+C:\Users\sora5\source\repos\AStanstardRPG\AStanstardRPG\ranger.cpp(17,65): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  warrior.cpp
+C:\Users\sora5\source\repos\AStanstardRPG\AStanstardRPG\warrior.cpp(17,65): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Generating code
+  17 of 677 functions ( 2.5%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    6 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  AStanstardRPG.vcxproj -> C:\Users\sora5\source\repos\AStanstardRPG\Release\AStanstardRPG.exe

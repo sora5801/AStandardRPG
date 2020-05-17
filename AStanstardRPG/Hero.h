@@ -13,9 +13,6 @@
 #include "Land.h"
 #include "Coin.h"
 using namespace std;
-//Until I find or think of a solution to the preprocessor recursion problem, 
-//I am just going to make these classes nested. I think the program should still be 
-//able to function as planned, though it will be very spaghetti.
 class Hero {
 
 protected:

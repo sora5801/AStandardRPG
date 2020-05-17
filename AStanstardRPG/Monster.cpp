@@ -86,3 +86,9 @@ void Monster::setWeaponLoot(Weapon w) {
 void Monster::setArmorLoot(Armor a) {
 	armor_loot = a;
 }
+
+std::ostream& operator<<(std::ostream& output, const Monster& M) {
+	output << M.name<< "/" << M.hitpoints << "/" << M.mana << "/" << M.experience << "/" << M.damage << "/" << M.intelligence << "/" 
+		<< M.strength << "/" << M.dexterity << "/" << M.wisdom << "/" << M.vitality;
+	return output;
+}

@@ -6,23 +6,24 @@
 #include "Database.h"
 #include "Party.h"
 #include "Land.h"
-//Monster EveryMonster(int);
-//Weapon EveryWeapon(int);
-//Armor EveryArmor(int);
-//Potion EveryPotion(int);
-//NPC everyNPC(int);
 
-using namespace std;
+void generateWorld(std::vector<std::vector<Tile>> *, Database *); //Create the world by generating a NxN tile
+
 int main()
 {
-    //std::vector<Hero> heroes;
+    int x = 0;
+    int y = 0;
+
     //mage man;
     //priest pan;
     //warrior wan;
     //ranger ran;
     //heroes.push_back(man);
     //Potion pat;
-    Database data;
+    Database *data = new Database;
+    Battle *battle = new Battle;
+    Party *party = new Party;
+    NPC* npc = new NPC;
     //ran.equipArmor(data.EveryArmor(1));
     //wan.equipArmor(data.EveryArmor(0));
     //wan.equipWeapon(data.EveryWeapon(0));
@@ -32,50 +33,51 @@ int main()
     //data.setEveryQuest();
     //data.setEveryNPC();
     //cout << data.EveryNPC(0).sayDialogue() << endl <<endl;
-    Battle battle;
     //battle.EngageBattle(man, pan, wan, ran, data.EveryMonster(0));
-   // cout << "This land is called Elluinus" << endl;
+    std::cout << npc->getdialogue() << std::endl;
+    std::cout << "This land is called Elluinus" << std::endl;
+    std::vector<std::vector<Tile>> voctis;
+    generateWorld(&voctis, data);
+ 
+    
+    party->ran.equipWeapon(data->EveryWeapon(1));
+    party->wan.equipWeapon(data->EveryWeapon(0));
+    std::cout <<party->ran.getHealth() << std::endl;
+    std::cout <<party->wan.getHealth() <<std::endl;
+    party->moveRight(voctis[0][1]);
+    party->moveRight(voctis[0][2]);
 
-    Party party;
-    battle.EngageBattle(party, data.EveryMonster(0));
-    party.moveMenu();
+    if(voctis[0][2].hasMonster())
+    {
+        char c;
+        std::cout << "The party has encountered a "<< voctis[0][2].getMonsters().getName() <<". Should they kill it?" <<std::endl;
+        std::cin >> c;
+        if (c == 'y' || c == 'Y') {
+            std::cout << "The party has engaged in a fierce battle!" << std::endl;
+            //battle.EngageBattle(party, vectis.get(0, 2).getMonsters());
+            battle->EngageBattle(*party, voctis[0][2].getMonsters());
+        }
+        else
+            std::cout << "The party has fled" << std::endl;
+    }
+    std::cout << party->ran.getHealth() << std::endl;
+    std::cout << party->wan.getHealth() << std::endl;
+    delete data;
+    delete battle;
     
 }
-
-//Monster EveryMonster(int i) {
-//    vector<Monster> vectis;
-//    Monster gargoyle(300, 50, 10, 10, 10, 10, 10);
-//    gargoyle.setWeaponLoot(EveryWeapon(0));
-//    gargoyle.setArmorLoot(EveryArmor(0));
-//    vectis.push_back(gargoyle);
-//    return vectis[i];
-//}
-//
-//Weapon EveryWeapon(int i) {
-//    vector<Weapon> vectis;
-//    Weapon sword("sword", 5);
-//    sword.setstatbonus(5, 5, 5, 5, 5);
-//    vectis.push_back(sword);
-//    Weapon bow("bow", 5);
-//    bow.setstatbonus(5, 5, 5, 5, 5);
-//    vectis.push_back(bow);
-//    return vectis[i];
-//}
-//
-//Armor EveryArmor(int i) {
-//    vector<Armor> vectis;
-//    Armor plate("plate", 5);
-//    plate.setstatbonus(4, 4, 4, 4, 4);
-//    vectis.push_back(plate);
-//    Armor leather("leather", 3);
-//    leather.setstatbonus(4, 4, 4, 4, 4);
-//    vectis.push_back(leather);
-//    return vectis[i];
-//}
-//
-//Potion EveryPotion(int i) {
-//    vector<Potion> vectis;
-//    Potion super("SuperPotion", 30, 20);
-//    vectis.push_back(super);
-//    return vectis[i];
-//}
+void generateWorld(std::vector<std::vector<Tile>> *v, Database *d) {
+    for (int i = 0; i < 7; i++) {
+        std::vector<Tile> vactis;
+        for (int j = 0; j < 7; j++) {
+           std::random_device rd;  //Will be used to obtain a seed for the random number engine
+           std::mt19937 gen(rd()); //Standard mersenne_twister_engine seeded with rd()
+           std::uniform_int_distribution<> dis(1, 7);
+            Tile tile;
+            if (dis(gen) >= 5)
+               tile.setMonsters(d->EveryMonster(0));
+            vactis.push_back(tile);
+        }
+        v->push_back(vactis);
+    }
+}

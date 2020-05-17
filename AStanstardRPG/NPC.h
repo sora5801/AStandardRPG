@@ -1,7 +1,5 @@
 #pragma once
 #include "Quest.h"
-#include <string>
-#include "Hero.h"
 class NPC {
 	Quest quest;
 	std::string dialogue;
@@ -10,8 +8,8 @@ public:
 	NPC();
 	NPC(std::string);
 	NPC(Quest, std::string);
-	std::string sayDialogue() { return dialogue; }
-	void assigndialogue(std::string d) { dialogue = d; }
-	std::string getdialogue() { return dialogue; }
-	void assignQuest(Hero& h) { h.takeQuest(this->quest); }
+	std::string sayDialogue();
+	void assigndialogue(std::string d);
+	std::string getdialogue();
+	Quest assignQuest();
 };

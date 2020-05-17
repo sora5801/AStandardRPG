@@ -9,11 +9,19 @@ struct Database {
     vector<Potion> vectis4;
     vector<NPC> vectis5;
     vector<Quest> vectis6;
+    Database();
     Monster EveryMonster(int i) {
         //Monster(std::string n, Weapon w, Armor a, int exp, int damage, int health, int mana, int intelligence, int strength, int dexterity, int wisdom, int vitality)
-        Monster gargoyle("gargoyle", EveryWeapon(0), EveryArmor(0), 100, 15, 300, 50, 10, 10, 10, 10, 10);
-        vectis1.push_back(gargoyle);
         return vectis1[i];
+    }
+
+    void searchMonster(std::string s) {
+       for (int i = 0; i < vectis1.size(); i++) {
+          if (vectis1[i].getName() == s) {
+             std::cout << vectis1[i] << "\n";
+             return;
+          }
+       }
     }
 
     Weapon EveryWeapon(int i) {
